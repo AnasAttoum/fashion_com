@@ -1,0 +1,71 @@
+.left {
+    background-image: url('../../public/Images/BreakLeft.jpg');
+    width: 100%;
+    height: 625px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+}
+
+.left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(50, 50, 50, 0.7);
+    backdrop-filter: blur(2px);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.para {
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+}
+.para h1{
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.right {
+    width: 40%;
+    height: 625px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+@media (max-width:800px){
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container>div:nth-child(1) {
+        width: 80% !important;
+        margin-bottom: 50px;
+    }
+    .left{
+        border-radius: 20px;
+    }
+    .left::before{
+        border-radius: 20px;
+    }
+    .para{
+        padding: 50px;
+    }
+
+    .right{
+        display: none;
+    }
+
+}

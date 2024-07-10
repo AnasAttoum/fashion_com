@@ -1,0 +1,25 @@
+.title{
+    font-size: 3vw;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-left: 7vw;
+    margin-top: 10vw;
+    margin-bottom: 3vw;
+    padding-left: 3vw;
+    position: relative;
+}
+.title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    border: .4vw solid #7b2cbf;
+    border-radius: 10px;
+}
+
+@media (max-width:500px){
+    .title{
+        font-size: 5vw;
+    }
+}

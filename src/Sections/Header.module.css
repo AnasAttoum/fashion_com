@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+DK+Uloopet:wght@100..400&display=swap');
+
+.brandName {
+    font-family: "Playwrite DK Uloopet", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.list>span {
+    cursor: pointer;
+}
+
+.responsive>span:nth-child(1) {
+    height: 65px;
+    display: none;
+}
+
+.search {
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 10px;
+}
+
+.search:focus {
+    outline: none;
+}
+
+.searchBtn {
+    background-color: #ddd;
+    border: none;
+    padding: 1.7px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.icon {
+    background-color: #ddd;
+    padding: 2px;
+    margin-left: 10px;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+@media (max-width:1060px) {
+    .brandName {
+        font-size: 1.5vw;
+    }
+
+    .list span {
+        font-size: 1.3vw;
+        margin-left: 0 !important;
+        margin-right: 18px !important;
+    }
+
+    .responsive>span:nth-child(1) {
+        font-size: 1.8vw;
+    }
+}
+
+@media (max-width:900px) {
+    .responsive>span:nth-child(1) {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .responsive {
+        position: relative;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+        display: none;
+
+        position: absolute;
+        top: 65px;
+        left: 0;
+
+        width: 20vw;
+
+        z-index: 1000;
+
+        background-color: #666;
+        color: white;
+    }
+
+    .list>span {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        font-size: 2vw;
+    }
+
+    .list>span:hover {
+        background-color: #333;
+    }
+
+    .responsive:hover>.list,
+    .list:hover {
+        display: flex;
+    }
+}
+
+@media(max-width:700px) {
+    .search {
+        width: 100px;
+        height: 20px;
+        font-size: 13px;
+    }
+
+    .searchBtn {
+        height: 20px;
+        position: relative;
+        top: 5px;
+    }
+
+    .searchBtn>svg {
+        position: relative;
+        top: -5px;
+    }
+
+    .icon {
+        padding: 1px;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+    }
+}
+
+
+@media(max-width:501px){
+    .brandName {
+        font-size: 2vw;
+    }
+
+    .list span {
+        font-size: 2vw;
+        margin-left: 0 !important;
+        margin-right: 18px !important;
+    }
+
+    .responsive>span:nth-child(1) {
+        font-size: 2vw;
+    }
+
+    .search {
+        width: 50px;
+        font-size: 9px;
+        position: relative;
+        top: -3.5px;
+    }
+
+    .searchBtn {
+        height: 20px;
+        position: relative;
+        top: 3px;
+    }
+}

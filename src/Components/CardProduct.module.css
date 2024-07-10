@@ -1,0 +1,45 @@
+.container {
+    margin: 10px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+.img {
+    width: 260px;
+    height: 350px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.explore {
+    color: #999;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.explore>svg {
+    transition: all .3s;
+}
+
+.container:hover>.explore {
+    color: #666;
+}
+
+.container:hover>.explore>svg {
+    transform: translateX(10px);
+}
+
+@media(max-width:300px)
+{
+    .container {
+        margin-bottom: 100px !important;
+    }
+    .img {
+        width: 200px;
+        height: 350px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    }
+}
