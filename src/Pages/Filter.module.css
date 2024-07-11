@@ -1,0 +1,7 @@
+@media (max-width:967px){
+  .responsive{
+      flex-direction: column;
+      width: 100vw !important;
+      margin-left: -0vw !important;
+  }
+}

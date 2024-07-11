@@ -7,7 +7,9 @@
     font-style: normal;
 }
 
-.list>span {
+.list>.link {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -52,12 +54,30 @@
     cursor: pointer;
 }
 
+.join {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin-left: 10px;
+
+    font-weight: 700;
+
+    height: 30px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
 @media (max-width:1060px) {
     .brandName {
         font-size: 1.5vw;
     }
 
-    .list span {
+    .list .link {
         font-size: 1.3vw;
         margin-left: 0 !important;
         margin-right: 18px !important;
@@ -94,18 +114,18 @@
 
         z-index: 1000;
 
-        background-color: #666;
+        background-color: #999;
         color: white;
     }
 
-    .list>span {
+    .list>.link {
         width: 100%;
         padding: 10px;
         margin: 5px;
         font-size: 2vw;
     }
 
-    .list>span:hover {
+    .list>.link:hover {
         background-color: #333;
     }
 
@@ -142,12 +162,13 @@
 }
 
 
-@media(max-width:501px){
+@media(max-width:501px) {
+
     .brandName {
         font-size: 2vw;
     }
 
-    .list span {
+    .list .link {
         font-size: 2vw;
         margin-left: 0 !important;
         margin-right: 18px !important;
@@ -168,5 +189,31 @@
         height: 20px;
         position: relative;
         top: 3px;
+    }
+
+    .join {
+        text-align: center;
+        border-radius: 5px;
+        padding-left: 0;
+        padding-right: 0;
+        height: 25px;
+        font-size: 8px;
+    }
+}
+
+@media(max-width:270px) {
+    .search {
+        width: 40px;
+        font-size: 8px;
+        position: relative;
+        top: -3.5px;
+    }
+    .searchBtn {
+        height: 20px;
+        position: relative;
+        top: 3px;
+    }
+    .icon{
+        margin-left: 3px;
     }
 }
