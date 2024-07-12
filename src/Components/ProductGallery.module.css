@@ -1,0 +1,52 @@
+.smallImages{
+    width: 75px;
+}
+.smallImages>img{
+    margin: 10px;
+    border-radius: 10px;
+}
+.mainImg{
+    background-image: url(../../public/Images/Products/Beautiful\ dress.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 40vw;
+    height: 750px;
+}
+
+@media(max-width:1100px){
+    .container{
+        justify-content: center;
+        margin-left: -150px;
+    }
+    .mainImg{
+        background-image: url(../../public/Images/Products/Beautiful\ dress.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 614.4px;
+        height: 750px;
+    }
+}
+
+@media(max-width:850px){
+    .container{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 0;
+
+    }
+    .smallImages{
+        flex-direction: row !important;
+        justify-content: center;
+        width: 75px;
+        height: 75px;
+    }
+}
+
+
+@media(max-width:600px){
+    .mainImg{
+        width: 80vw;
+        background-size: contain;
+    }
+}

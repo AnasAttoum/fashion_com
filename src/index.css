@@ -1,8 +1,12 @@
-body{
+:root {
+  --mainColor: #7b2cbf
+}
+
+body {
   overflow-x: hidden;
 }
 
 /* color of the arrow of the background images in MAIN page */
 .kKeLlU {
-    stroke: black !important;
-  }
+  stroke: black !important;
+}

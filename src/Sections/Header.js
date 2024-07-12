@@ -12,20 +12,35 @@ export default function Header() {
     useEffect(() => {
         if (param.type) {
             document.getElementById('list').childNodes.forEach(element => {
-                element.style.color='black'
+                element.style.color = 'black'
             });
 
-            document.getElementById(param.type.toLocaleLowerCase()).style.color = '#7b2cbf'
+            document.getElementById(param.type.toLocaleLowerCase()).style.color = 'var(--mainColor)'
         }
-        else{
+        else {
             document.getElementById('list').childNodes.forEach(element => {
-                element.style.color='black'
+                element.style.color = 'black'
             });
 
-            document.getElementById('shop').style.color = '#7b2cbf'
+            document.getElementById('shop').style.color = 'var(--mainColor)'
         }
 
     }, [param])
+
+    function click(e) {
+        if (window.screen.width <= 900) {
+            if (document.getElementById('list').style.display === 'flex')
+                document.getElementById('list').style.display = 'none';
+            else
+                document.getElementById('list').style.display = 'flex';
+        }
+
+    }
+    function removeClick(e) {
+        if (window.screen.width <= 900) {
+            document.getElementById('list').style.display = 'none';
+        }
+    }
 
     return (
         <>
@@ -33,17 +48,17 @@ export default function Header() {
                 <div className={styles.brandName}>Fashion COM</div>
 
                 <span className={styles.responsive}>
-                    <span>
+                    <span onClick={click}>
                         Categories
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="black" fillRule="evenodd" d="m6 7l6 6l6-6l2 2l-8 8l-8-8z"></path></svg>
                     </span>
 
-                    <div className={styles.list} id='list'>
+                    <div className={styles.list} id='list' onClick={removeClick}>
                         <Link to='/' id='shop' className={`mx-4 ${styles.link}`}>S h o p</Link>
-                        <Link to='filter/men' id='men' className={`mx-4 ${styles.link}`}>M e n</Link>
-                        <Link to='filter/women' id='women' className={`mx-4 ${styles.link}`} >W o m e n</Link>
-                        <Link to='filter/combos' id='combos' className={`mx-4 ${styles.link}`}>C o m b o s</Link>
-                        <Link to='filter/joggers' id='joggers' className={`mx-4 ${styles.link}`}>J o g g e r s</Link>
+                        <Link to='men' id='men' className={`mx-4 ${styles.link}`}>M e n</Link>
+                        <Link to='women' id='women' className={`mx-4 ${styles.link}`} >W o m e n</Link>
+                        <Link to='combos' id='combos' className={`mx-4 ${styles.link}`}>C o m b o s</Link>
+                        <Link to='joggers' id='joggers' className={`mx-4 ${styles.link}`}>J o g g e r s</Link>
                     </div>
                 </span>
 

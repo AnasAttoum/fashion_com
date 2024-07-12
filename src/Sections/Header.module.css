@@ -100,7 +100,6 @@
     }
 
     .list {
-        display: flex;
         flex-direction: column;
 
         text-align: center;
@@ -127,11 +126,6 @@
 
     .list>.link:hover {
         background-color: #333;
-    }
-
-    .responsive:hover>.list,
-    .list:hover {
-        display: flex;
     }
 }
 

@@ -14,7 +14,7 @@
     position: absolute;
     left: 0;
     height: 100%;
-    border: .4vw solid #7b2cbf;
+    border: .4vw solid var(--mainColor);
     border-radius: 10px;
 }
 

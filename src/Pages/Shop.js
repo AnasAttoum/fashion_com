@@ -1,10 +1,10 @@
-import styles from './Filter.module.css'
+import styles from './Shop.module.css'
 import FilterOptions from "../Components/FilterOptions";
 import Title from "../Components/Title";
 import CardProduct from "../Components/CardProduct";
 import Footer from '../Sections/Footer'
 
-export default function Filter() {
+export default function Shop() {
   return (
     <>
       <div className={`d-flex m-5 ${styles.responsive}`}>
