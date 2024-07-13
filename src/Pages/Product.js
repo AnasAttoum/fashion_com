@@ -1,4 +1,8 @@
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+
 import styles from './Product.module.css'
+import { store } from '../'
 import ProductGallery from "../Components/ProductGallery";
 import ProductDetails from "../Components/ProductDetails";
 import Title from '../Components/Title';
@@ -6,11 +10,24 @@ import CardProduct from '../Components/CardProduct';
 import Footer from '../Sections/Footer';
 
 export default function Product() {
+
+    const param = useParams()
+    let product = store.getState().Products.find(element => { return element.id === parseInt(param.productId) })
+    let Color = Object.values(product.colors)[0]
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'instant'
+        })
+    }, [param])
+
+
     return (
         <>
             <div className={`d-flex mt-3 ${styles.container}`}>
-                <ProductGallery />
-                <ProductDetails />
+                <ProductGallery index={product.id} mainPic={Color.mainPic} pics={Color.pics} name={product.name} />
+                <ProductDetails product={product} color={Color} />
             </div>
 
             <div className={`d-flex flex-wrap justify-content-evenly my-5 p-5 ${styles.break}`} style={{ rowGap: '30px', backgroundColor: '#222', color: 'white' }}>
@@ -34,14 +51,11 @@ export default function Product() {
 
             <Title title='Similar Products' />
             <div className='d-flex flex-wrap justify-content-evenly p-5' style={{ columnGap: '10px' }}>
-                <CardProduct img='/Images/Products/Manfinity Homme 1 Peça Jaqueta Acolchoada Masculina Com Forro Térmico E Hem Com Cordão Para AjusteDescobri produtos incríveis no SHEIN_com, venha conferir!.jpg' alt='Jackets' name='Jackets' />
-                <CardProduct img='/Images/Products/Men Antlers Embroidery Colourblock Shirt Without Tee.jpg' alt='Shirts' name='Shirts' />
-                <CardProduct img='/Images/Products/Men Contrast Trim Patched Pocket Tee.jpg' alt='Plain T-Shirts' name='Plain T-Shirts' />
-                <CardProduct img='/Images/Products/photo_2024-07-10_16-17-55.jpg' alt='Polo T-Shirts' name='Polo T-Shirts' />
-                <CardProduct img='/Images/Products/Men Color-block Letter Embroidery Drawstring Hoodie.jpg' alt='Hoodies & Sweetshirt' name='Hoodies & Sweetshirt' />
-                <CardProduct img='/Images/Products/CHRISTINA HIGH _ JOURNEY LIGHT USED - JOURNEY LIGHT USED _ 30 _ 32.jpg' alt='Jeans' name='Jeans' />
-                <CardProduct img="/Images/Products/photo_2024-07-10_16-19-40.jpg" alt='Activewear' name='Activewear' />
-                <CardProduct img='/Images/Products/photo_2024-07-10_16-27-29.jpg' alt='Socks' name='Socks' />
+                {store.getState().Products.filter(element => {
+                    return element.type === param.type && element.id !== parseInt(param.productId)
+                }).map((element,index)=>{
+                    return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} />
+                })}
             </div>
 
             <Footer />

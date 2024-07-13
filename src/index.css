@@ -1,5 +1,6 @@
 :root {
-  --mainColor: #7b2cbf
+  --mainColor: #7b2cbf;
+  --mainColorHover: #8f57c0;
 }
 
 body {

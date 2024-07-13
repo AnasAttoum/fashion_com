@@ -1,11 +1,22 @@
 import styles from './ProductDetails.module.css'
 import HalfRating from './Rating'
 
-export default function ProductDetails() {
+export default function ProductDetails(props) {
+
+    const { product, color } = props
+    const sizes = ['XXS', 'XS', 'S', 'L', 'XL', 'XXL', '3XL', '4XL']
+
+    const click = (e) => {
+        document.getElementById('container').childNodes.forEach(element=>{
+            element.style.backgroundColor='white'
+        })
+        e.target.style.backgroundColor='#999'
+    }
+
     return (
         <div className={`m-5 ${styles.responsive}`} style={{ width: '40%' }}>
-            <h2>Raven Hoodie With Black Colored Design</h2>
-            <h6 className={styles.discription}>100% Bio-washed Cotton - makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.</h6>
+            <h2>{product.name}</h2>
+            <h6 className={styles.discription}>{product.description}</h6>
 
 
 
@@ -17,16 +28,10 @@ export default function ProductDetails() {
             </div>
 
             <div className='mt-5'>Select Size :</div>
-            <div className={styles.container} style={{ borderTop: 'none' }}>
-                <div className={styles.size}>XXS</div>
-                <div className={styles.size}>XS</div>
-                <div className={styles.size}>S</div>
-                <div className={styles.size}>M</div>
-                <div className={styles.size}>L</div>
-                <div className={styles.size}>XL</div>
-                <div className={styles.size}>XXL</div>
-                <div className={styles.size}>3XL</div>
-                <div className={styles.size}>4XL</div>
+            <div className={styles.container} id='container' style={{ borderTop: 'none' }}>
+                {sizes.map((element, index) => {
+                    return (color.size.includes(element) ? <div key={index} className={styles.size} onClick={click}>{element}</div> : <div key={index} className={styles.notFound}>{element}</div>)
+                })}
             </div>
 
             <div className='d-flex mt-4'>
@@ -35,48 +40,48 @@ export default function ProductDetails() {
                     &nbsp;Add to cart
                 </div>
 
-                <div className={styles.btn2}>60.00&nbsp;$</div>
+                <div className={styles.btn2}>{product.price}&nbsp;$</div>
 
-                
+
             </div>
 
-            <div className='my-4' style={{width:'100%',padding:'1vw',display:'flex flex-column',backgroundColor:'#eee',borderRadius:'10px'}}>
-                <div className='d-flex justify-content-around' style={{width:'100%',borderBottom:'1px solid #999'}}>
-                    <div style={{padding:'.5vw',width:'33%'}}>
-                        <p style={{color:'#666'}}>Fabric</p>
-                        <p>Bio-washed Cotton</p>
+            <div className={`my-4 ${styles.more}`} style={{ width: '100%', padding: '1vw', display: 'flex flex-column', backgroundColor: '#eee', borderRadius: '10px' }}>
+                <div className='d-flex justify-content-around' style={{ width: '100%', borderBottom: '1px solid #999' }}>
+                    <div style={{ padding: '.5vw', width: '33%' }}>
+                        <p style={{ color: '#666' }}>Fabric</p>
+                        <p>{product.fabric}</p>
                     </div>
-                    <div style={{borderRight:'1px solid #999'}}></div>
-                    <div style={{padding:'.5vw',width:'33%'}}>
-                        <p style={{color:'#666'}}>Pattern</p>
-                        <p>Printed</p>
+                    <div style={{ borderRight: '1px solid #999' }}></div>
+                    <div style={{ padding: '.5vw', width: '33%' }}>
+                        <p style={{ color: '#666' }}>Pattern</p>
+                        <p>{product.pattern}</p>
                     </div>
-                    <div style={{borderRight:'1px solid #999'}}></div>
-                    <div style={{padding:'.5vw',width:'33%'}}>
-                        <p style={{color:'#666'}}>Fit</p>
-                        <p>Regular-fit</p>
+                    <div style={{ borderRight: '1px solid #999' }}></div>
+                    <div style={{ padding: '.5vw', width: '33%' }}>
+                        <p style={{ color: '#666' }}>Fit</p>
+                        <p>{product.fit}</p>
                     </div>
                 </div>
 
-                <div className='d-flex justify-content-around' style={{width:'100%'}}>
-                    <div style={{padding:'.5vw',width:'33%'}}>
-                        <p style={{color:'#666'}}>Neck</p>
-                        <p>Round Neck</p>
+                <div className='d-flex justify-content-around' style={{ width: '100%' }}>
+                    <div style={{ padding: '.5vw', width: '33%' }}>
+                        <p style={{ color: '#666' }}>Neck</p>
+                        <p>{product.neck}</p>
                     </div>
-                    <div style={{borderRight:'1px solid #999'}}></div>
-                    <div style={{padding:'.5vw',width:'33%'}}>
-                        <p style={{color:'#666'}}>Sleeve</p>
-                        <p>Half-sleeves</p>
+                    <div style={{ borderRight: '1px solid #999' }}></div>
+                    <div style={{ padding: '.5vw', width: '33%' }}>
+                        <p style={{ color: '#666' }}>Sleeve</p>
+                        <p>{product.sleeve}</p>
                     </div>
-                    <div style={{borderRight:'1px solid #999'}}></div>
-                    <div style={{padding:'.5vw',width:'33%'}}>
-                        <p style={{color:'#666'}}>style</p>
-                        <p>CasualWear</p>
+                    <div style={{ borderRight: '1px solid #999' }}></div>
+                    <div style={{ padding: '.5vw', width: '33%' }}>
+                        <p style={{ color: '#666' }}>style</p>
+                        <p>{product.style}</p>
                     </div>
                 </div>
-                
+
             </div>
-            
+
 
         </div>
     )

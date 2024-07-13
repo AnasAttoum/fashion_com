@@ -57,8 +57,8 @@ export default function Header() {
                         <Link to='/' id='shop' className={`mx-4 ${styles.link}`}>S h o p</Link>
                         <Link to='men' id='men' className={`mx-4 ${styles.link}`}>M e n</Link>
                         <Link to='women' id='women' className={`mx-4 ${styles.link}`} >W o m e n</Link>
-                        <Link to='combos' id='combos' className={`mx-4 ${styles.link}`}>C o m b o s</Link>
-                        <Link to='joggers' id='joggers' className={`mx-4 ${styles.link}`}>J o g g e r s</Link>
+                        {/* <Link to='combos' id='combos' className={`mx-4 ${styles.link}`}>C o m b o s</Link>
+                        <Link to='joggers' id='joggers' className={`mx-4 ${styles.link}`}>J o g g e r s</Link> */}
                     </div>
                 </span>
 

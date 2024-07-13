@@ -1,7 +1,11 @@
 import { combineReducers } from "redux"
 
-import { IsLogged } from "./IsLogged"
+import Products from "./Products"
+import IsFav from './IsFav'
+import IsLogged from "./IsLogged"
 
 export const AllReducers = combineReducers({
-    IsLogged: IsLogged,
+    Products: Products,
+    IsFav: IsFav,
+    IsLogged: IsLogged
 })
