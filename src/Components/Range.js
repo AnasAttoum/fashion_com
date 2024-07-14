@@ -10,7 +10,7 @@ function valuetext(value) {
 
 const minDistance = 10;
 
-export default function MinimumDistanceSlider() {
+export default function MinimumDistanceSlider({ setShowOriginal, data, setData }) {
     const [value1, setValue1] = React.useState([0, 500]);
 
     const handleChange1 = (event, newValue, activeThumb) => {
@@ -23,6 +23,8 @@ export default function MinimumDistanceSlider() {
         } else {
             setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
         }
+        setData({ ...data, low: value1[0], high: value1[1] })
+        setShowOriginal(false)
     };
 
 
@@ -40,7 +42,7 @@ export default function MinimumDistanceSlider() {
                     max={500}
                 />
             </Box>
-            <div className='d-flex justify-content-between' style={{width:'100%'}}>
+            <div className='d-flex justify-content-between' style={{ width: '100%' }}>
                 <p style={{ backgroundColor: '#ccc', borderRadius: '5px', padding: '5px' }}>min: {value1[0]}$</p>
                 <p style={{ backgroundColor: '#ccc', borderRadius: '5px', padding: '5px' }}>max: {value1[1]}$</p>
             </div>

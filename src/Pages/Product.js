@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import styles from './Product.module.css'
@@ -13,7 +13,7 @@ export default function Product() {
 
     const param = useParams()
     let product = store.getState().Products.find(element => { return element.id === parseInt(param.productId) })
-    let Color = Object.values(product.colors)[0]
+    const [Color, setColor] = useState(Object.values(product.colors)[0])
 
     useEffect(() => {
         window.scrollTo({
@@ -27,7 +27,7 @@ export default function Product() {
         <>
             <div className={`d-flex mt-3 ${styles.container}`}>
                 <ProductGallery index={product.id} mainPic={Color.mainPic} pics={Color.pics} name={product.name} />
-                <ProductDetails product={product} color={Color} />
+                <ProductDetails product={product} color={Color} setColor={setColor} />
             </div>
 
             <div className={`d-flex flex-wrap justify-content-evenly my-5 p-5 ${styles.break}`} style={{ rowGap: '30px', backgroundColor: '#222', color: 'white' }}>
@@ -53,8 +53,8 @@ export default function Product() {
             <div className='d-flex flex-wrap justify-content-evenly p-5' style={{ columnGap: '10px' }}>
                 {store.getState().Products.filter(element => {
                     return element.type === param.type && element.id !== parseInt(param.productId)
-                }).map((element,index)=>{
-                    return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} />
+                }).map((element, index) => {
+                    return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} />
                 })}
             </div>
 

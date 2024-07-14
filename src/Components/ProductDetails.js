@@ -3,20 +3,31 @@ import HalfRating from './Rating'
 
 export default function ProductDetails(props) {
 
-    const { product, color } = props
+    const { product, color ,setColor } = props
+    const myKeys = Object.keys(product.colors)
     const sizes = ['XXS', 'XS', 'S', 'L', 'XL', 'XXL', '3XL', '4XL']
 
-    const click = (e) => {
-        document.getElementById('container').childNodes.forEach(element=>{
-            element.style.backgroundColor='white'
+
+    const clickColor = (e) => {
+        document.getElementById('colors').childNodes.forEach(element => {
+            element.style.outline = 'none'
         })
-        e.target.style.backgroundColor='#999'
+        e.target.style.outline = '4px solid var(--mainColor)'
+        setColor(product.colors[e.target.style.backgroundColor])
+    }
+
+
+    const click = (e) => {
+        document.getElementById('container').childNodes.forEach(element => {
+            element.style.backgroundColor = 'white'
+        })
+        e.target.style.backgroundColor = '#999'
     }
 
     return (
         <div className={`m-5 ${styles.responsive}`} style={{ width: '40%' }}>
             <h2>{product.name}</h2>
-            <h6 className={styles.discription}>{product.description}</h6>
+            <h6>{product.description}</h6>
 
 
 
@@ -27,8 +38,17 @@ export default function ProductDetails(props) {
                 <p>120 Comment</p>
             </div>
 
+            <div className={styles.colors}>
+                <p>Colors :</p>
+                <div id='colors' className='d-flex' style={{ columnGap: '20px' }}>
+                    {myKeys.map((element, index) => {
+                        return <div key={index} style={{ backgroundColor: element }} onClick={clickColor}></div>
+                    })}
+                </div>
+            </div>
+
             <div className='mt-5'>Select Size :</div>
-            <div className={styles.container} id='container' style={{ borderTop: 'none' }}>
+            <div id='container' style={{ borderTop: 'none' }}>
                 {sizes.map((element, index) => {
                     return (color.size.includes(element) ? <div key={index} className={styles.size} onClick={click}>{element}</div> : <div key={index} className={styles.notFound}>{element}</div>)
                 })}

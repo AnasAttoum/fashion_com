@@ -4,6 +4,7 @@ import Header from './Sections/Header';
 import Main from "./Pages/Main";
 import Filter from './Pages/Filter';
 import Product from './Pages/Product';
+import Fav from './Pages/Fav';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route index element={<Main />} />
             <Route path=':type' element={<Filter />} />
             <Route path=':type/:productId' element={<Product />} />
+            <Route path='fav' element={<Fav />} />
           </Route>
 
         </Routes>

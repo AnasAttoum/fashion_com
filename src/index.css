@@ -11,3 +11,8 @@ body {
 .kKeLlU {
   stroke: black !important;
 }
+
+/* color of the Range Filter in Filter page */
+.css-188mx6n-MuiSlider-root {
+  color: var(--mainColorHover) !important;
+}

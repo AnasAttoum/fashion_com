@@ -5,8 +5,7 @@ export default function IsFav(state = initialState, action) {
         case 'ADD_FAV':
             return [...state, action.payload]
         case 'DELETE_FAV':
-            state.splice(state.indexOf(action.payload),1)
-            return state
+            return state.filter(value=>{return value!==action.payload})
         default:
             return state
     }
