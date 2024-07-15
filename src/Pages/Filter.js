@@ -44,12 +44,12 @@ export default function Filter() {
         <div>
           <Title title={`Categories For ${param.type.charAt(0).toUpperCase() + param.type.slice(1)}`} />
           {showOriginal
-            ? <div className='d-flex flex-wrap justify-content-evenly p-5' style={{ columnGap: '0px' }}>
+            ? <div className={`d-flex flex-wrap justify-content-evenly p-5 ${styles.cardProduct}`} style={{ columnGap: '0px' }}>
               {Products.map((element, index) => {
                 return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} />
               })}
             </div>
-            : <div className='d-flex flex-wrap justify-content-evenly p-5' style={{ columnGap: '0px' }}>
+            : <div className={`d-flex flex-wrap justify-content-evenly p-5 ${styles.cardProduct}`} style={{ columnGap: '0px' }}>
               {dataFromFilter.map((element, index) => {
                 return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} />
               })}

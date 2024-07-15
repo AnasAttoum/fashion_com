@@ -12,8 +12,13 @@ import Footer from '../Sections/Footer';
 export default function Product() {
 
     const param = useParams()
-    let product = store.getState().Products.find(element => { return element.id === parseInt(param.productId) })
+    const [product, setProduct] = useState(store.getState().Products.find(element => { return element.id === parseInt(param.productId) }))
     const [Color, setColor] = useState(Object.values(product.colors)[0])
+    const [refresh, setRefresh] = useState(false)
+
+    useEffect(() => {
+        setProduct(store.getState().Products.find(element => { return element.id === parseInt(param.productId) }))
+    }, [refresh, param.productId])
 
     useEffect(() => {
         window.scrollTo({
@@ -26,8 +31,8 @@ export default function Product() {
     return (
         <>
             <div className={`d-flex mt-3 ${styles.container}`}>
-                <ProductGallery index={product.id} mainPic={Color.mainPic} pics={Color.pics} name={product.name} />
-                <ProductDetails product={product} color={Color} setColor={setColor} />
+                <ProductGallery index={product.id} mainPic={Color.mainPic} pics={Color.pics} name={product.name}/>
+                <ProductDetails product={product} color={Color} setColor={setColor} refresh={refresh} setRefresh={setRefresh} />
             </div>
 
             <div className={`d-flex flex-wrap justify-content-evenly my-5 p-5 ${styles.break}`} style={{ rowGap: '30px', backgroundColor: '#222', color: 'white' }}>
@@ -50,7 +55,7 @@ export default function Product() {
             </div>
 
             <Title title='Similar Products' />
-            <div className='d-flex flex-wrap justify-content-evenly p-5' style={{ columnGap: '10px' }}>
+            <div className={`d-flex flex-wrap justify-content-evenly p-5 ${styles.cardProduct}`} style={{ columnGap: '10px' }}>
                 {store.getState().Products.filter(element => {
                     return element.type === param.type && element.id !== parseInt(param.productId)
                 }).map((element, index) => {

@@ -5,3 +5,9 @@
       margin-left: -0vw !important;
   }
 }
+
+@media (max-width:656px){
+  .cardProduct{
+      padding: 0 !important;
+  }
+}
