@@ -8,7 +8,7 @@ export default function ProductGallery({ index, mainPic, pics, name }) {
 
   const dispatch = useDispatch()
   const IsFav = useSelector(state => state.IsFav)
-  const IsLogged = useSelector(state => state.IsLogged)
+  const IsLogged = useSelector(state => state.IsLogged.log)
   const [show, setShow] = useState(IsFav.includes(index))
   const [snack, setSnack] = useState(false)
 

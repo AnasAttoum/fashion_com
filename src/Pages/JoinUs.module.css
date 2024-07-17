@@ -1,0 +1,83 @@
+.signIn,
+.signUp,
+.pic {
+    width: 48vw;
+    height: 650px;
+    border-radius: 20px;
+}
+
+.signIn {
+    padding: 20px;
+}
+
+.signUp {
+    padding: 20px;
+}
+
+.pic {
+    position: absolute;
+    transform: translateX(-24vw);
+    background-image: url(../../public/Images/JoinUs.jpg);
+    background-position: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s;
+    z-index: 1;
+}
+
+.pic::before {
+    content: '';
+    position: absolute;
+    background-color: #00000091;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    cursor: pointer;
+    background-color: var(--mainColorHover);
+    font-size: 2vw;
+    color: white;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: all .3s;
+}
+
+.btn:hover {
+    background-color: var(--mainColor);
+}
+
+@media(max-width:700px) {
+    .btn {
+        font-size: 3.5vw;
+    }
+
+    .h1 {
+        font-size: 4vw;
+    }
+
+    .h6 {
+        font-size: 2.2vw;
+    }
+
+    .pic {
+        background-position: 20%;
+    }
+}
+
+@media(max-width:500px) {
+
+    .signIn label,
+    .signUp label,
+    .signUp p,
+    .Button
+    {
+    font-size: 2.5vw;
+}
+}

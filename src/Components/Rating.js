@@ -8,7 +8,7 @@ import NormalSnackbar from './NormalSnackbar';
 export default function RatingSize({ rating, num, id ,refresh,setRefresh }) {
   const [snack, setSnack] = React.useState(false)
   const dispatch = useDispatch()
-  const IsLogged = useSelector(state => state.IsLogged)
+  const IsLogged = useSelector(state => state.IsLogged.log)
 
   React.useEffect(()=>{
     setTimeout(()=>{

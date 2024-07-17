@@ -14,7 +14,7 @@ export default function ProductDetails(props) {
 
 
     const [snack, setSnack] = useState(false)
-    const IsLogged = useSelector(state => state.IsLogged)
+    const IsLogged = useSelector(state => state.IsLogged.log)
   
     useEffect(()=>{
       setTimeout(()=>{

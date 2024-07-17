@@ -41,7 +41,7 @@ export default function Comments({ comments }) {
     const handleClose = () => setOpen(false);
 
     const [snack, setSnack] = React.useState(false)
-    const IsLogged = useSelector(state => state.IsLogged)
+    const IsLogged = useSelector(state => state.IsLogged.log)
 
     React.useEffect(() => {
         setTimeout(() => {
