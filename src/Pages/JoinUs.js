@@ -64,22 +64,20 @@ export default function SignUp() {
   const signIn = (e) => {
     e.preventDefault()
     if (verification.signIn.email === '') {
-      console.log('first')
-      if (users.filter(element => { return element.email === emailSignIn.current.value.trim().toLowerCase() && element.password === passwordSignIn.current.value }).length !== 0) {
+      if (users.filter(element => { return element.email.toLowerCase() === emailSignIn.current.value.trim().toLowerCase() && element.password === passwordSignIn.current.value }).length !== 0) {
         setVerification({ ...verification, 'signIn': { ...verification.signIn, 'password': '' } })
-        const user = users.find(element => { return element.email === emailSignIn.current.value.trim().toLowerCase() && element.password === passwordSignIn.current.value })
+        const user = users.find(element => { return element.email.toLowerCase() === emailSignIn.current.value.trim().toLowerCase() && element.password === passwordSignIn.current.value })
         dispatch({
           type: 'SIGN_IN', payload: {
             id: user.id,
             name: user.name,
-            email: emailSignIn.current.value.toLowerCase(),
+            email: emailSignIn.current.value,
             password: passwordSignIn.current.value,
           }
         })
         navigate("/");
       }
       else {
-        console.log('else')
         setVerification({ ...verification, 'signIn': { ...verification.signIn, 'password': 'Invalid Email or Password' } })
       }
     }
@@ -88,14 +86,13 @@ export default function SignUp() {
   const signUp = (e) => {
     e.preventDefault()
     if (verification.signUp.name === '' && verification.signUp.email === '' && verification.signUp.password === '' && checkSignUp.current.checked) {
-      if (users.filter(element => { return element.email === emailSignUp.current.value.trim().toLowerCase() }).length === 0) {
-        console.log('first')
+      if (users.filter(element => { return element.email.toLowerCase() === emailSignUp.current.value.trim().toLowerCase() }).length === 0) {
         setVerification({ ...verification, 'signUp': { ...verification.signUp, 'email': '' } })
         dispatch({
           type: 'ADD_USER', payload: {
             id: newId,
             name: nameSignUp.current.value,
-            email: emailSignUp.current.value.toLowerCase(),
+            email: emailSignUp.current.value.trim(),
             password: passwordSignUp.current.value,
           }
         })
@@ -103,14 +100,13 @@ export default function SignUp() {
           type: 'SIGN_IN', payload: {
             id: newId,
             name: nameSignUp.current.value,
-            email: emailSignUp.current.value.toLowerCase(),
+            email: emailSignUp.current.value.trim(),
             password: passwordSignUp.current.value,
           }
         })
         navigate("/");
       }
       else {
-        console.log('eld')
         setVerification({ ...verification, 'signUp': { ...verification.signUp, 'email': 'This email already exist' } })
       }
     }

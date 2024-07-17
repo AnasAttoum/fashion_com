@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -34,7 +34,7 @@ const style = {
 
 
 
-export default function Comments({ comments }) {
+export default function Comments({ comments, product ,refresh,setRefresh }) {
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -42,6 +42,11 @@ export default function Comments({ comments }) {
 
     const [snack, setSnack] = React.useState(false)
     const IsLogged = useSelector(state => state.IsLogged.log)
+    const userId = useSelector(state => state.IsLogged.account.id)
+    const users = useSelector(state => state.Users)
+
+    const com = React.useRef()
+    const dispatch = useDispatch()
 
     React.useEffect(() => {
         setTimeout(() => {
@@ -50,18 +55,25 @@ export default function Comments({ comments }) {
     })
 
     const addComment = () => {
-        if(IsLogged){
-
+        if (IsLogged) {
+            dispatch({
+                type: 'ADD_COMMENT', payload: {
+                    id: product.id,
+                    userId: userId,
+                    comment:com.current.value
+            }
+            })
+            setRefresh(!refresh)
+            com.current.value=''
         }
-        else{
+        else {
             setSnack(true)
         }
     }
-
     return (
         <>
             {snack && <NormalSnackbar text={'Please Login or Sign Up first'} />}
-            <div className='d-flex my-3' style={{ cursor: 'pointer' }} onClick={handleOpen}>
+            <div className='d-flex my-2' style={{ cursor: 'pointer' }} onClick={handleOpen}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24"><path fill="none" stroke="black" strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 1 0-9-9c0 1.488.36 2.89 1 4.127L3 21l4.873-1c1.236.639 2.64 1 4.127 1"></path></svg>
                 <p>{Object.keys(comments).length} Comment</p>
             </div>
@@ -77,27 +89,28 @@ export default function Comments({ comments }) {
                         Comments
                     </Typography>
 
-                    {Object.values(comments).map((element, index) => {
+                    {comments.map((element, index) => {
                         return <Card key={index} sx={{ maxWidth: 345 }} className='mb-3'>
                             <CardHeader
-                                avatar={<Avatar sx={{ bgcolor: red[500] }}>R</Avatar>}
-                                title="Shrimp and Chorizo Paella"
+                                avatar={<Avatar sx={{ bgcolor: red[500] }}>{users[element[0]].name.charAt(0)}</Avatar>}
+                                title={users[element[0]].name}
                             />
 
                             <CardContent>
                                 <Typography variant="body2" color="text.secondary">
-                                    {element}
+                                    {element[1]}
                                 </Typography>
                             </CardContent>
                         </Card>
                     })}
 
                     <TextField
+                        inputRef={com}
                         id="filled-multiline-static"
                         label="Add Comment Here"
                         multiline
                         rows={4}
-                        defaultValue="Default Value"
+                        defaultValue=""
                         variant="filled"
                         style={{ backgroundColor: '#ffffff88', width: '100%', borderTopRightRadius: '20px', borderTopLeftRadius: '20px' }}
                     />
