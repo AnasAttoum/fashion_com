@@ -56,7 +56,7 @@
 
 .join {
     color: white;
-    background-color: black;
+    background-color: var(--color);
     padding: 10px;
     margin-left: 10px;
 

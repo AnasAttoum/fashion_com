@@ -14,6 +14,34 @@ export default function Users(state = users, action) {
                 email: action.payload.email,
                 password: action.payload.password
             }]
+        case 'EDIT_USER_NAME':
+            return state.map(element => {
+                if (element.id === parseInt(action.payload.id)) {
+                    return { ...element, name: action.payload.newName }
+                }
+                else {
+                    return { ...element }
+                }
+            })
+        case 'EDIT_USER_EMAIL':
+            return state.map(element => {
+                if (element.id === parseInt(action.payload.id)) {
+                    return { ...element, email: action.payload.newEmail }
+                }
+                else {
+                    return { ...element }
+                }
+            })
+        case 'EDIT_USER_PASSWORD':
+            return state.map(element => {
+                if (element.id === parseInt(action.payload.id)) {
+                    return { ...element, password: action.payload.newPassword }
+                }
+                else {
+                    return { ...element }
+                }
+            })
+
         default:
             return state;
     }

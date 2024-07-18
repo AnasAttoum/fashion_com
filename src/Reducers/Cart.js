@@ -17,6 +17,7 @@ export default function Cart(state = cart, action) {
             }
             else {
                 return [...state, {
+                    id: Object.keys(state).length,
                     productId: action.payload.productId,
                     color: { ...action.payload.color },
                     size: action.payload.size,
@@ -24,6 +25,12 @@ export default function Cart(state = cart, action) {
                 }]
             }
 
+
+        case 'DELETE_FROM_CART':
+            return state.filter(element => {
+                return element.id !== parseInt(action.payload.id)
+            })
+            
         default:
             return state
     }

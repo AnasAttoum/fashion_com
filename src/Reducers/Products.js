@@ -8,7 +8,7 @@ const products = [
         rating: 3.83, num: 6, ratingDetails: { '0': 2, '1': 5, '2': 4, '3': 3, '4': 4, '5': 5 },
         comments: [ ['0', 'This is my very first order through site, and I am totally and completely satisfied! The fit is great and so are the prices. I will definitely return again and again...'], ['1', 'I completely love this site, found it on EBay at first now I just order directly through them...I am always complemented on my outfits I will be back for more...Thank you for having cute trendy clothes that fit and look good.'], ['2', 'I just got my first order and I have one word WOW!!!! Love, Love, Love these cloths!! I had my doubts before I ordered because most sites plus size cloths are too small and I’m usually disappointment, but not this time!! The shipping was also really fast1 only took about 9 days to get to me. Love it!! I’ll be back to buy more. For Sure!'] ],
         colors: {
-            'red': { color: 'red', size: ['M', 'L', 'XL'], mainPic: '/Images/Products/Women/1/Color1/Striped Panel Button Front Knot Hem Cami Top .jpg', pics: ['/Images/Products/Women/1/Color1/61n+pqsT5XL._SY741_.jpg', '/Images/Products/Women/1/Color1/51WnFT1JJ8L._SY741_.jpg', '/Images/Products/Women/1/Color1/51T7Bi5EbhL._SY741_.jpg', '/Images/Products/Women/1/Color1/41V-Z+YUatL._SY741_.jpg'], sale: '15' },
+            'maroon': { color: 'maroon', size: ['M', 'L', 'XL'], mainPic: '/Images/Products/Women/1/Color1/Striped Panel Button Front Knot Hem Cami Top .jpg', pics: ['/Images/Products/Women/1/Color1/61n+pqsT5XL._SY741_.jpg', '/Images/Products/Women/1/Color1/51WnFT1JJ8L._SY741_.jpg', '/Images/Products/Women/1/Color1/51T7Bi5EbhL._SY741_.jpg', '/Images/Products/Women/1/Color1/41V-Z+YUatL._SY741_.jpg'], sale: '15' },
             'black': { color: 'black', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Women/1/Color2/Screenshot 2024-07-12 at 20-05-29 SHEIN Privé Plus Striped Print Knot Front Cami Top SHEIN USA.png', pics: ['/Images/Products/Women/1/Color2/Screenshot 2024-07-12 at 20-05-51 SHEIN Privé Plus Striped Print Knot Front Cami Top SHEIN USA.png', '/Images/Products/Women/1/Color2/Screenshot 2024-07-12 at 20-06-50 SHEIN Privé Plus Striped Print Knot Front Cami Top SHEIN USA.png'], sale: '0' }
         },
         price: '16.00', fabric: '100% Polyester', pattern: 'Striped', fit: 'Regular Fit ', neck: 'Spaghetti Strap', sleeve: '-', style: 'Boho'
@@ -87,7 +87,7 @@ const products = [
         url: '/Images/Products/Men/2/Men Antlers Embroidery Colourblock Shirt Without Tee.jpg',
         type: 'men', option: ['top', 'printedTShirt'],
         rating: 4.5, num: 6, ratingDetails: { '0': 5, '1': 5, '2': 4, '3': 3, '4': 5, '5': 5 },
-        comments: {},
+        comments: [],
         colors: {
             'white': { color: 'white', size: ['S', 'M', 'L', 'XL'], mainPic: '/Images/Products/Men/2/Men Antlers Embroidery Colourblock Shirt Without Tee.jpg', pics: ['/Images/Products/Men/2/Screenshot 2024-07-12 at 22-28-28 Manfinity Homme قميص قرون مطرز ألوان متباينة بدون تي شيرت للرجال شي إن.png'], sale: '60' }
         },
@@ -102,7 +102,7 @@ const products = [
         rating: 4.5, num: 6, ratingDetails: { '0': 5, '1': 5, '2': 4, '3': 3, '4': 5, '5': 5 },
         comments: [[ '0', 'I have ordered and received several items now, and I have to say, I am in love with this store!!!! Everything I have received fit perfectly, and is good quality. I ordered clothes in my size and they were true to size! I would not hesitate to shop this site again, and I tell all of my friends and family to shop this site too! '], ['1', 'Just received my order & am thrilled with everything I purchased! and the shipping was awesome it took 3 days best yet! i will shop again thanks you.' ]],
         colors: {
-            'chocolate': { color: 'chocolate', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/3/Men Contrast Trim Patched Pocket Tee.jpg', pics: ['/Images/Products/Men/3/Screenshot 2024-07-12 at 22-45-24 Manfinity Hypemode Men T-Shirts Baggy Crew Neck Short Sleeve Plain Casual Simple Summer Polyester SHEIN EUR.png'], sale: '50' }
+            'burlywood': { color: 'burlywood', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/3/Men Contrast Trim Patched Pocket Tee.jpg', pics: ['/Images/Products/Men/3/Screenshot 2024-07-12 at 22-45-24 Manfinity Hypemode Men T-Shirts Baggy Crew Neck Short Sleeve Plain Casual Simple Summer Polyester SHEIN EUR.png'], sale: '50' }
         },
         price: '19.95', fabric: 'Cotton', pattern: 'Plain', fit: 'Regular Fit ', neck: 'Crew Neck', sleeve: 'Short Sleeve', style: 'Casual'
     },
@@ -141,7 +141,7 @@ const products = [
         rating: 4.33, num: 6, ratingDetails: { '0': 5, '1': 5, '2': 4, '3': 3, '4': 4, '5': 5 },
         comments: [[ '0', 'I am so delighted in your clothing! It is absolutely gorgeous...everything I have ordered FITS PERFECTLY...my fiance has told me how beautiful I look in the outfits I have purchased, as well as receiving many other compliments on the quality of your clothing lines from friends and family! I am so happy I have found you...and I will continue to purchase from you all! Thank you so very much!'], ['1', 'Thank you for offering these beautifully unique tops. They are flattering and gorgeous.'], ['2', 'I love the way your website is done with the flip images and the catwalks. Makes it wonderful to shop online. Thank you. I’ll be back again and again!' ]],
         colors: {
-            'white': { color: 'white', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/6/CHRISTINA HIGH _ JOURNEY LIGHT USED - JOURNEY LIGHT USED _ 30 _ 32.jpg', pics: ['/Images/Products/Men/6/81KozRNhn9L._SX569_.jpg'], sale: '5' }
+            'DodgerBlue': { color: 'DodgerBlue', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/6/CHRISTINA HIGH _ JOURNEY LIGHT USED - JOURNEY LIGHT USED _ 30 _ 32.jpg', pics: ['/Images/Products/Men/6/81KozRNhn9L._SX569_.jpg'], sale: '5' }
         },
         price: '150.00', fabric: '95% cotton / 5% LYCRA', pattern: 'plain', fit: 'Regular Fit ', neck: '.', sleeve: '-', style: 'Normal'
     },
@@ -156,7 +156,7 @@ const products = [
         colors: {
             'black': { color: 'black', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color1/photo_2024-07-10_16-19-40.jpg', pics: ['/Images/Products/Men/7/Color1/51yIl0E0+LL._AC_SX569_.jpg'], sale: '0' },
             'white': { color: 'white', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color2/61-Qnztz6WL._AC_SX569_.jpg', pics: [], sale: '0' },
-            'red': { color: 'red', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color3/618he6dmbpL._AC_SX569_.jpg', pics: [], sale: '0' }
+            'OrangeRed': { color: 'OrangeRed', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color3/618he6dmbpL._AC_SX569_.jpg', pics: [], sale: '0' }
         },
         price: '115.55', fabric: 'Polyester', pattern: 'Striped', fit: 'Regular Fit ', neck: '-', sleeve: 'Long Sleeve', style: 'Normal'
     },
@@ -169,9 +169,9 @@ const products = [
         rating: 3.16, num: 6, ratingDetails: { '0': 4, '1': 5, '2': 2, '3': 3, '4': 4, '5': 1 },
         comments: [ ['0', 'This is my very first order through site, and I am totally and completely satisfied! The fit is great and so are the prices. I will definitely return again and again...'], ['1', 'I completely love this site, found it on EBay at first now I just order directly through them...I am always complemented on my outfits I will be back for more...Thank you for having cute trendy clothes that fit and look good.'], ['2', 'I just got my first order and I have one word WOW!!!! Love, Love, Love these cloths!! I had my doubts before I ordered because most sites plus size cloths are too small and I’m usually disappointment, but not this time!! The shipping was also really fast1 only took about 9 days to get to me. Love it!! I’ll be back to buy more. For Sure!'] ],
         colors: {
-            'blue': { color: 'blue', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color1/61AMfbBxalL._AC_SY550_.jpg', pics: ['/Images/Products/Men/8/Color1/61asKYKT-CL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xqt452tWL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xwM+pWkIL._AC_SY550_.jpg'], sale: '0' },
-            'red': { color: 'red', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color2/Color Block Cactus Embroidered Hoodie - L.jpg', pics: ['/Images/Products/Men/8/Color2/28255f62006074fc3738b1e743dd141a4978af0e.webp'], sale: '0' },
-            'green': { color: 'green', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color3/3bb43a9c3e47ef3a5e673c34b1dab443a496ef85.webp', pics: ['/Images/Products/Men/8/Color3/cceb71b5c90c11a91bad2299858a6c597486a2b8.webp'], sale: '0' }
+            'Aquamarine': { color: 'Aquamarine', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color1/61AMfbBxalL._AC_SY550_.jpg', pics: ['/Images/Products/Men/8/Color1/61asKYKT-CL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xqt452tWL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xwM+pWkIL._AC_SY550_.jpg'], sale: '0' },
+            'Maroon': { color: 'Maroon', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color2/Color Block Cactus Embroidered Hoodie - L.jpg', pics: ['/Images/Products/Men/8/Color2/28255f62006074fc3738b1e743dd141a4978af0e.webp'], sale: '0' },
+            'DarkGreen': { color: 'DarkGreen', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color3/3bb43a9c3e47ef3a5e673c34b1dab443a496ef85.webp', pics: ['/Images/Products/Men/8/Color3/cceb71b5c90c11a91bad2299858a6c597486a2b8.webp'], sale: '0' }
         },
         price: '27.99', fabric: 'Cotton', pattern: 'Striped', fit: 'Regular Fit ', neck: 'Crew Neck', sleeve: 'Long Sleeve', style: 'Casual'
     }

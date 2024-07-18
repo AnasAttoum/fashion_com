@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+.head {
+    background-color: #444;
+}
+
+.head>div {
+    width: 20%;
+    text-align: center;
+    color: white;
+}
+
+.head>div:nth-child(1) {
+    width: 40%;
+}
+
+.container {
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    height: 150px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.img {
+    height: 80%;
+    border-radius: 10px;
+}
+
+.container>div {
+    width: 20%;
+    text-align: center;
+}
+
+.container>div:nth-child(1) {
+    width: 40%;
+}
+
+
+.title {
+    font-family: "Dancing Script", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.details{
+    cursor: pointer;
+    background-color: #777;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+}
+
+@media(max-width:900px) {
+    .h6 {
+        font-size: 1.8vw !important;
+    }
+    .p {
+        font-size: 1.5vw !important;
+    }
+}
+
+@media(max-width:600px) {
+    .container {
+        height: 100px;
+    }
+    .noImg {
+        width: 88vw !important;
+        height: 88vw !important;
+    }
+    .img{
+        height: 80%;
+    }
+    .h6 {
+        font-size: 2.2vw !important;
+    }
+    .p {
+        font-size: 2.2vw !important;
+    }
+    .details{
+        font-size: 2.5vw;
+    }
+    .stat>h1{
+        font-size: 5vw !important;
+    }
+    .stat>Button{
+        margin-right: 0px !important;
+        font-size: 3vw;
+    }
+}
+
+@media(max-width:400px) {
+    .head>div {
+        font-size: 3vw;
+    }
+}

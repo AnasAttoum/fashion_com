@@ -19,8 +19,22 @@ const IsLogged = (state = logged, action) => {
                     password: action.payload.password,
                 }
             }
-        // case 'LOG_OUT':
-        //     return state = false;
+        case 'SIGN_OUT':
+            return {
+                log: false,
+                account: {
+                    id: '',
+                    name: '',
+                    email: '',
+                    password: '',
+                }
+            }
+        case 'EDIT_CURRENT_NAME':
+            return { ...state, account: { ...state.account, name: action.payload.newName } }
+        case 'EDIT_CURRENT_EMAIL':
+            return { ...state, account: { ...state.account, email: action.payload.newEmail } }
+        case 'EDIT_CURRENT_PASSWORD':
+            return { ...state, account: { ...state.account, password: action.payload.newPassword } }
         default:
             return state;
     }

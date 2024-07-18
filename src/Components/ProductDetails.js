@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import styles from './ProductDetails.module.css'
 import HalfRating from './Rating'
@@ -50,6 +51,8 @@ export default function ProductDetails(props) {
 
     const dispatch = useDispatch()
 
+    const navigate = useNavigate()
+
     useEffect(() => {
         setTimeout(() => {
             setSnack(false)
@@ -86,6 +89,7 @@ export default function ProductDetails(props) {
                         quantity:quantity
                     }
                 })
+                navigate('/cart')
             }
             else {
                 setWarning('Please choose a size')
@@ -213,7 +217,7 @@ const StyledInputRoot = styled('div')(
     display: flex;
     flex-flow: row nowrap;
     justify-content: start;
-    align-items: center;
+    align-items: baseline;
   `,
 );
 

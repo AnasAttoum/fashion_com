@@ -1,0 +1,37 @@
+.container{
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+  width: 450px;
+  background-color: #dfd9e4;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.text{
+  font-size: 2vw;
+}
+.subText{
+  font-size: 1.2vw;
+}
+
+@media (max-width:950px){
+  .text{
+    font-size: 2.5vw;
+  }
+  .subText{
+    font-size: 2vw;
+  }
+}
+
+@media (max-width:500px){
+  .container{
+    width: 100%;
+    border-radius: 0px;
+    padding: 20px;
+  }
+  .text{
+    font-size: 5vw;
+  }
+  .subText{
+    font-size: 3.5vw;
+  }
+}
