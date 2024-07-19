@@ -22,6 +22,22 @@
   }
 }
 
+@media (max-width:755px){
+  .box{
+    width: 100vw;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: row !important;
+  }
+  .css-35zqo5-MuiTabs-root {
+    overflow: visible;
+  }
+  .css-1cgx7kx-MuiTabs-scroller {
+    width: 250px;
+    overflow-x: visible;
+  }
+}
+
 @media (max-width:500px){
   .container{
     width: 100%;

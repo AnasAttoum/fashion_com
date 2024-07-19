@@ -141,7 +141,7 @@ const products = [
         rating: 4.33, num: 6, ratingDetails: { '0': 5, '1': 5, '2': 4, '3': 3, '4': 4, '5': 5 },
         comments: [[ '0', 'I am so delighted in your clothing! It is absolutely gorgeous...everything I have ordered FITS PERFECTLY...my fiance has told me how beautiful I look in the outfits I have purchased, as well as receiving many other compliments on the quality of your clothing lines from friends and family! I am so happy I have found you...and I will continue to purchase from you all! Thank you so very much!'], ['1', 'Thank you for offering these beautifully unique tops. They are flattering and gorgeous.'], ['2', 'I love the way your website is done with the flip images and the catwalks. Makes it wonderful to shop online. Thank you. I’ll be back again and again!' ]],
         colors: {
-            'DodgerBlue': { color: 'DodgerBlue', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/6/CHRISTINA HIGH _ JOURNEY LIGHT USED - JOURNEY LIGHT USED _ 30 _ 32.jpg', pics: ['/Images/Products/Men/6/81KozRNhn9L._SX569_.jpg'], sale: '5' }
+            'dodgerblue': { color: 'dodgerblue', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/6/CHRISTINA HIGH _ JOURNEY LIGHT USED - JOURNEY LIGHT USED _ 30 _ 32.jpg', pics: ['/Images/Products/Men/6/81KozRNhn9L._SX569_.jpg'], sale: '5' }
         },
         price: '150.00', fabric: '95% cotton / 5% LYCRA', pattern: 'plain', fit: 'Regular Fit ', neck: '.', sleeve: '-', style: 'Normal'
     },
@@ -156,7 +156,7 @@ const products = [
         colors: {
             'black': { color: 'black', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color1/photo_2024-07-10_16-19-40.jpg', pics: ['/Images/Products/Men/7/Color1/51yIl0E0+LL._AC_SX569_.jpg'], sale: '0' },
             'white': { color: 'white', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color2/61-Qnztz6WL._AC_SX569_.jpg', pics: [], sale: '0' },
-            'OrangeRed': { color: 'OrangeRed', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color3/618he6dmbpL._AC_SX569_.jpg', pics: [], sale: '0' }
+            'orangered': { color: 'orangered', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/7/Color3/618he6dmbpL._AC_SX569_.jpg', pics: [], sale: '0' }
         },
         price: '115.55', fabric: 'Polyester', pattern: 'Striped', fit: 'Regular Fit ', neck: '-', sleeve: 'Long Sleeve', style: 'Normal'
     },
@@ -169,9 +169,9 @@ const products = [
         rating: 3.16, num: 6, ratingDetails: { '0': 4, '1': 5, '2': 2, '3': 3, '4': 4, '5': 1 },
         comments: [ ['0', 'This is my very first order through site, and I am totally and completely satisfied! The fit is great and so are the prices. I will definitely return again and again...'], ['1', 'I completely love this site, found it on EBay at first now I just order directly through them...I am always complemented on my outfits I will be back for more...Thank you for having cute trendy clothes that fit and look good.'], ['2', 'I just got my first order and I have one word WOW!!!! Love, Love, Love these cloths!! I had my doubts before I ordered because most sites plus size cloths are too small and I’m usually disappointment, but not this time!! The shipping was also really fast1 only took about 9 days to get to me. Love it!! I’ll be back to buy more. For Sure!'] ],
         colors: {
-            'Aquamarine': { color: 'Aquamarine', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color1/61AMfbBxalL._AC_SY550_.jpg', pics: ['/Images/Products/Men/8/Color1/61asKYKT-CL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xqt452tWL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xwM+pWkIL._AC_SY550_.jpg'], sale: '0' },
-            'Maroon': { color: 'Maroon', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color2/Color Block Cactus Embroidered Hoodie - L.jpg', pics: ['/Images/Products/Men/8/Color2/28255f62006074fc3738b1e743dd141a4978af0e.webp'], sale: '0' },
-            'DarkGreen': { color: 'DarkGreen', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color3/3bb43a9c3e47ef3a5e673c34b1dab443a496ef85.webp', pics: ['/Images/Products/Men/8/Color3/cceb71b5c90c11a91bad2299858a6c597486a2b8.webp'], sale: '0' }
+            'aquamarine': { color: 'quamarine', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color1/61AMfbBxalL._AC_SY550_.jpg', pics: ['/Images/Products/Men/8/Color1/61asKYKT-CL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xqt452tWL._AC_SY550_.jpg', '/Images/Products/Men/8/Color1/81xwM+pWkIL._AC_SY550_.jpg'], sale: '0' },
+            'maroon': { color: 'maroon', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color2/Color Block Cactus Embroidered Hoodie - L.jpg', pics: ['/Images/Products/Men/8/Color2/28255f62006074fc3738b1e743dd141a4978af0e.webp'], sale: '0' },
+            'darkgreen': { color: 'darkgreen', size: ['S', 'M', 'XL'], mainPic: '/Images/Products/Men/8/Color3/3bb43a9c3e47ef3a5e673c34b1dab443a496ef85.webp', pics: ['/Images/Products/Men/8/Color3/cceb71b5c90c11a91bad2299858a6c597486a2b8.webp'], sale: '0' }
         },
         price: '27.99', fabric: 'Cotton', pattern: 'Striped', fit: 'Regular Fit ', neck: 'Crew Neck', sleeve: 'Long Sleeve', style: 'Casual'
     }

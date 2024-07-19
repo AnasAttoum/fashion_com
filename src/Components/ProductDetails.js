@@ -65,6 +65,8 @@ export default function ProductDetails(props) {
             element.style.outline = 'none'
         })
         e.target.style.outline = '4px solid var(--mainColor)'
+        console.log(product.colors)
+        console.log(e.target.style.backgroundColor)
         setColor(product.colors[e.target.style.backgroundColor])
     }
 

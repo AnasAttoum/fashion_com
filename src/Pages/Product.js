@@ -18,7 +18,8 @@ export default function Product() {
 
     useEffect(() => {
         setProduct(store.getState().Products.find(element => { return element.id === parseInt(param.productId) }))
-    }, [refresh, param.productId])
+        setColor(Object.values(product.colors)[0])
+    }, [refresh, param.productId,product])
 
     useEffect(() => {
         window.scrollTo({

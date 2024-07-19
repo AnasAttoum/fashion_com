@@ -53,6 +53,12 @@
     color: white;
     padding: 10px;
 }
+.order{
+    background-color: var(--mainColor) !important;
+}
+.order:hover{
+    background-color: var(--mainColorHover) !important;
+}
 
 @media(max-width:900px) {
     .h6 {
@@ -83,7 +89,7 @@
     .details{
         font-size: 2.5vw;
     }
-    .stat>h1{
+    .stat>h3{
         font-size: 5vw !important;
     }
     .stat>Button{

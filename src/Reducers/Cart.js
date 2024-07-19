@@ -30,7 +30,10 @@ export default function Cart(state = cart, action) {
             return state.filter(element => {
                 return element.id !== parseInt(action.payload.id)
             })
-            
+
+        case 'CLEAR_CART':
+            return []
+
         default:
             return state
     }

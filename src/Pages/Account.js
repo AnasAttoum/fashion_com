@@ -21,6 +21,8 @@ export default function Account() {
   let regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const account = useSelector(state => state.IsLogged.account)
+  const orders = useSelector(state => state.Order)
+  const products = useSelector(state => state.Products)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [data, setData] = React.useState({ btn: '', jsx: '' });
@@ -63,7 +65,7 @@ export default function Account() {
           </form>
       })
     }
-    else{
+    else {
       setData({
         btn: e.currentTarget.id, jsx:
           <form onSubmit={editPassword}>
@@ -135,7 +137,7 @@ export default function Account() {
     if (password.current.value !== account.password) {
       war.current.innerHTML = 'Old password is not correct'
     }
-    else if (newPassword.current.value.length <=8) {
+    else if (newPassword.current.value.length <= 8) {
       war.current.innerHTML = 'Password must be more than 7 character'
     }
     else {
@@ -190,7 +192,7 @@ export default function Account() {
           </div>
         </div>
 
-        <Button className='mt-4' color='error' variant="contained" endIcon={<LogoutIcon />} onClick={signOut}>
+        <Button className='my-4' color='error' variant="contained" endIcon={<LogoutIcon />} onClick={signOut}>
           Sign Out
         </Button>
       </div>
@@ -218,6 +220,44 @@ export default function Account() {
           </Box>
         </Fade>
       </Modal>
+
+
+
+      {orders.length !== 0 ? <div className='d-flex flex-column justify-content-center align-items-center mt-5'>
+        <Title title='My Orders' />
+      </div> : null}
+
+      {orders.map((order, index) => {
+        return (
+          <div key={index}>
+            <div className='d-flex flex-column justify-content-center align-items-center mt-5'>
+              <div className={styles.container}>
+                <h4 className={styles.text}>Order Number : #{order.id}</h4>
+                <h6 className={styles.subText}>Order Date : {`${order.date}`}</h6>
+                <h6 className={styles.subText}>Status : <span style={{ color: 'green' }}>{`${order.status}`}</span></h6>
+                <h6 className={styles.subText}>Payment Method : {`${order.paymentMethod}`}</h6>
+
+                <h6 className={styles.subText}>Total : <span style={{ color: 'var(--mainColor' }}>{`${order.cart.reduce((acc, element) => {
+                  const product = products.find((el) => { return el.id === element.productId })
+                  return acc + element.quantity * product.price
+                }, 0).toFixed(2)}`}
+                </span>
+                </h6>
+
+              </div>
+              <div className={`mt-3 d-flex flex-wrap justify-content-center align-items-center ${styles.container}`} style={{ backgroundColor: '#eee', columnGap: '20px' }}>
+                {order.cart.map((el, i) => {
+                    const product = products.find(product=> { return product.id === el.productId })
+                  return <img style={{ height: '110px', borderRadius: '20px', cursor: 'pointer', margin:'5px' }} key={i} src={el.color.mainPic} alt={el.color.color} onClick={() => navigate(`/${product.type}/${el.productId}`)} />
+                })}
+              </div>
+
+            </div>
+          </div>
+        )
+      })}
+
+
     </>
   )
 }
