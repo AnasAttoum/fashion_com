@@ -21,8 +21,8 @@ export default function Fav() {
           <Title title='My Favorites'/>
           <div className='d-flex flex-wrap justify-content-evenly p-5' style={{ columnGap: '11px' }}>
             {IsFav.map((element,index) => {
-              const product = products.find(value=>{return value.id===element})
-              return <CardProduct key={index} index={product.id} type={product.type} img={product.url} name={product.name} price={product.price}/>
+              const product = products.find(value=>{return value.id===element.id})
+              return <CardProduct key={index} index={product.id} type={product.type} img={element.color.mainPic} name={product.name} price={product.price} sale={product.colors[Object.keys(product.colors)[0]].sale}/>
             })}
           </div>
         </div>

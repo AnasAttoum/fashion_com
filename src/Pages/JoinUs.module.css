@@ -52,6 +52,7 @@
 .btn:hover {
     background-color: var(--mainColor);
 }
+.none{display: none !important;}
 
 @media(max-width:700px) {
     .btn {
@@ -76,8 +77,14 @@
     .signIn label,
     .signUp label,
     .signUp p,
-    .Button
-    {
-    font-size: 2.5vw;
+    .Button {
+        font-size: 2.5vw !important;
+    }
 }
+
+@media(max-width:422px) {
+    .Button {
+        font-size: 2.5vw !important;
+    }
+
 }

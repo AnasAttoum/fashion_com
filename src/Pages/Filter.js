@@ -46,12 +46,12 @@ export default function Filter() {
           {showOriginal
             ? <div className={`d-flex flex-wrap justify-content-evenly p-5 ${styles.cardProduct}`} style={{ columnGap: '0px' }}>
               {Products.map((element, index) => {
-                return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} />
+                return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} sale={element.colors[Object.keys(element.colors)[0]].sale} />
               })}
             </div>
             : <div className={`d-flex flex-wrap justify-content-evenly p-5 ${styles.cardProduct}`} style={{ columnGap: '0px' }}>
               {dataFromFilter.map((element, index) => {
-                return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} />
+                return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} sale={element.colors[Object.keys(element.colors)[0]].sale} />
               })}
             </div>}
 

@@ -19,8 +19,8 @@ const persistRed = persistReducer(config, AllReducers)
 
 export const store = createStore(
     persistRed,
-    // applyMiddleware(),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(),
+    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 )
 const persistor = persistStore(store)
 

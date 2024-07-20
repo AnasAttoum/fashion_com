@@ -159,7 +159,7 @@ export default function SignUp() {
           <form onSubmit={signUp} className='d-flex flex-column justify-content-center align-items-start' style={{ height: '80%' }}>
 
             <ThemeProvider theme={theme} >
-              <label htmlFor='name' className='my-3'>Name :</label>
+              <label htmlFor='name' className='my-3 mt-5'>Name :</label>
               <TextField id="name" label="Name" variant="outlined" color='primary' fullWidth inputRef={nameSignUp} required helperText={verification.signUp.name}
                 onChange={(e) => {
                   if (e.target.value.length <= 1) {
@@ -197,7 +197,7 @@ export default function SignUp() {
                 <p className='mt-3'>Agree to our Terms of use and Privacy Policy</p>
               </div>
 
-              <Button type='submit' variant="contained" endIcon={<SendIcon />} className={`mt-1 px-5 ${styles.Button}`} >Sign Up</Button>
+              <Button type='submit' variant="contained" endIcon={<SendIcon className={styles.sendIcon}/>} className={`mt-1 px-5 ${styles.Button}`} >Sign Up</Button>
             </ThemeProvider>
 
           </form>

@@ -65,8 +65,6 @@ export default function ProductDetails(props) {
             element.style.outline = 'none'
         })
         e.target.style.outline = '4px solid var(--mainColor)'
-        console.log(product.colors)
-        console.log(e.target.style.backgroundColor)
         setColor(product.colors[e.target.style.backgroundColor])
     }
 
@@ -86,9 +84,9 @@ export default function ProductDetails(props) {
                 dispatch({
                     type: 'ADD_TO_CART', payload: {
                         productId: product.id,
-                        color:color,
-                        size:size,
-                        quantity:quantity
+                        color: color,
+                        size: size,
+                        quantity: quantity
                     }
                 })
                 navigate('/cart')
@@ -140,7 +138,8 @@ export default function ProductDetails(props) {
                     &nbsp;Add to cart
                 </div>
 
-                <div className={styles.btn2}>{product.price}&nbsp;$</div>
+                <div style={color.price !== 0 ? {color:'var(--mainColor)',fontWeight:'700'} : null} className={styles.btn2}>{(product.price - product.price*(color.sale/100)).toFixed(2)}&nbsp;$</div>
+                {color.price !== 0 ? <div style={{ border: 'none', textDecoration: 'line-through', paddingLeft: '1vw' }} className={styles.btn2}>{product.price}&nbsp;$</div> : null}
 
 
             </div>

@@ -15,6 +15,8 @@ import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 export default function Account() {
   // eslint-disable-next-line
@@ -37,6 +39,24 @@ export default function Account() {
   const password = React.useRef()
   const newPassword = React.useRef()
   const war = React.useRef()
+
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#8f57c0',
+      },
+    },
+    components: {
+      MuiFormHelperText: {
+        styleOverrides: {
+          root: {
+            color: "red",
+            marginTop: '5px'
+          }
+        }
+      }
+    }
+  });
 
   const edit = (e) => {
     if (e.currentTarget.id === 'Name') {
@@ -216,7 +236,9 @@ export default function Account() {
             <Typography id="transition-modal-title" variant="h6" component="h2">
               Edit {data.btn}
             </Typography>
-            {data.jsx}
+            <ThemeProvider theme={theme} >
+              {data.jsx}
+            </ThemeProvider>
           </Box>
         </Fade>
       </Modal>
@@ -239,7 +261,7 @@ export default function Account() {
 
                 <h6 className={styles.subText}>Total : <span style={{ color: 'var(--mainColor' }}>{`${order.cart.reduce((acc, element) => {
                   const product = products.find((el) => { return el.id === element.productId })
-                  return acc + element.quantity * product.price
+                  return acc + element.quantity * (product.price - product.price * (element.color.sale / 100)).toFixed(2)
                 }, 0).toFixed(2)}`}
                 </span>
                 </h6>
@@ -247,8 +269,8 @@ export default function Account() {
               </div>
               <div className={`mt-3 d-flex flex-wrap justify-content-center align-items-center ${styles.container}`} style={{ backgroundColor: '#eee', columnGap: '20px' }}>
                 {order.cart.map((el, i) => {
-                    const product = products.find(product=> { return product.id === el.productId })
-                  return <img style={{ height: '110px', borderRadius: '20px', cursor: 'pointer', margin:'5px' }} key={i} src={el.color.mainPic} alt={el.color.color} onClick={() => navigate(`/${product.type}/${el.productId}`)} />
+                  const product = products.find(product => { return product.id === el.productId })
+                  return <img style={{ height: '110px', borderRadius: '20px', cursor: 'pointer', margin: '5px' }} key={i} src={el.color.mainPic} alt={el.color.color} onClick={() => navigate(`/${product.type}/${el.productId}`)} />
                 })}
               </div>
 

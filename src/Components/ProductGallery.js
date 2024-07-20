@@ -4,19 +4,28 @@ import { useEffect, useState } from 'react'
 import styles from './ProductGallery.module.css'
 import NormalSnackbar from './NormalSnackbar'
 
-export default function ProductGallery({ index, mainPic, pics, name }) {
+export default function ProductGallery({ index, mainPic, pics, name, color }) {
 
   const dispatch = useDispatch()
   const IsFav = useSelector(state => state.IsFav)
   const IsLogged = useSelector(state => state.IsLogged.log)
-  const [show, setShow] = useState(IsFav.includes(index))
+  const [show, setShow] = useState(IsFav.filter(element => { return element.id === index && element.color.color === color.color }).length !== 0)
   const [snack, setSnack] = useState(false)
 
-  useEffect(()=>{
-    setTimeout(()=>{
+  useEffect(() => {
+    setTimeout(() => {
       setSnack(false)
-    },5000)
+    }, 5000)
   })
+
+  useEffect(() => {
+    if (IsFav.filter(element => { return element.id === index && element.color.color === color.color }).length !== 0) {
+      setShow(true)
+    }
+    else{
+      setShow(false)
+    }
+  },[IsFav, index, color])
 
   const click = (e) => {
     if (e.target.id !== 'smallImages') {
@@ -30,13 +39,13 @@ export default function ProductGallery({ index, mainPic, pics, name }) {
 
   const fav = (e) => {
     if (IsLogged) {
-      if (IsFav.includes(index)) {
-        dispatch({ type: 'DELETE_FAV', payload: index })
-        setShow(false)
+      if (IsFav.filter(element => { return element.id === index && element.color.color === color.color }).length !== 0) {
+        dispatch({ type: 'DELETE_FAV', payload: { productId: index, color: color } })
+        setShow(true)
       }
       else {
-        dispatch({ type: 'ADD_FAV', payload: index })
-        setShow(true)
+        dispatch({ type: 'ADD_FAV', payload: { productId: index, color: color } })
+        setShow(false)
       }
     }
     else {
@@ -47,7 +56,7 @@ export default function ProductGallery({ index, mainPic, pics, name }) {
 
   return (
     <div className={`d-flex ${styles.container}`}>
-      {snack && <NormalSnackbar text={'Please Login or Sign Up first'}/>}
+      {snack && <NormalSnackbar text={'Please Login or Sign Up first'} />}
       <div className={`d-flex flex-column m-5 ${styles.smallImages}`} id='smallImages' onClick={click}>
         <img src={mainPic} alt={name} className={styles.active} />
         {pics.map((element, index) => {

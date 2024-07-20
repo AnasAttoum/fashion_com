@@ -29,7 +29,7 @@ export default function Cart() {
     const [total, setTotal] = useState(
         cart.reduce((acc, element) => {
             const product = products.find((el) => { return el.id === element.productId })
-            return acc + element.quantity * product.price
+            return acc + element.quantity * (product.price - product.price*(element.color.sale/100)).toFixed(2)
         }, 0))
     const [num, setNum] = useState(
         cart.reduce((acc, element) => {
@@ -70,7 +70,7 @@ export default function Cart() {
     useEffect(() => {
         setTotal(cart.reduce((acc, element) => {
             const product = products.find((el) => { return el.id === element.productId })
-            return acc + element.quantity * product.price
+            return acc + element.quantity * (product.price - product.price*(element.color.sale/100)).toFixed(2)
         }, 0))
         setNum(cart.reduce((acc, element) => {
             return acc + element.quantity
@@ -132,7 +132,7 @@ export default function Cart() {
                                 <p style={{ color: '#444', fontSize: '1vw' }} className={styles.p}>size: {element.size}</p>
                             </div>
                         </div>
-                        <div className={styles.h6} cl style={{ alignSelf: 'center' }}>{product.price} $</div>
+                        <div className={styles.h6} cl style={{ alignSelf: 'center' }}>{(product.price - product.price*(element.color.sale/100)).toFixed(2)} $</div>
                         <div className={styles.h6} style={{ alignSelf: 'center' }}>{element.quantity}</div>
                         <div className='d-flex justify-content-center align-items-center' style={{ alignSelf: 'center' }}>
                             <Link to={`/${product.type}/${product.id}`}>

@@ -32,7 +32,7 @@ export default function Product() {
     return (
         <>
             <div className={`d-flex mt-3 ${styles.container}`}>
-                <ProductGallery index={product.id} mainPic={Color.mainPic} pics={Color.pics} name={product.name}/>
+                <ProductGallery index={product.id} mainPic={Color.mainPic} pics={Color.pics} name={product.name} color={Color}/>
                 <ProductDetails product={product} color={Color} setColor={setColor} refresh={refresh} setRefresh={setRefresh} />
             </div>
 
@@ -60,7 +60,7 @@ export default function Product() {
                 {store.getState().Products.filter(element => {
                     return element.type === param.type && element.id !== parseInt(param.productId)
                 }).map((element, index) => {
-                    return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} />
+                    return <CardProduct key={index} index={element.id} type={element.type} img={element.url} name={element.name} price={element.price} sale={element.colors[Object.keys(element.colors)[0]].sale}/>
                 })}
             </div>
 
